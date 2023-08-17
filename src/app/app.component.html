@@ -1,0 +1,27 @@
+﻿<!-- nav -->
+<app-header></app-header>
+<nav class="navbar navbar-expand navbar-dark bg-dark px-3" *ngIf="user">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Patient</a>
+        <li class="nav-item nav-link" routerLink="/searchproduct" routerLinkActive="active">Search-Product</li>
+        <li class="nav-item nav-link" routerLink="/productdetails" routerLinkActive="active">Product-Details</li>
+        <li class="nav-item nav-link" routerLink="/getprobatch" routerLinkActive="active">Get-Product-Batch</li>
+     
+          <!-- <li class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Patient Detail</li> -->
+       
+        <li class="nav-item nav-link" routerLink="/placeorder" routerLinkActive="active">Place-Order</li>
+        <li class="nav-item nav-link" routerLink="/orderdetails" routerLinkActive="active">Order-List</li>
+        <li class="nav-item nav-link" routerLink="/orderlist" routerLinkActive="active">Order-Details</li>
+  <li> </li>
+
+        <button class="btn btn-link nav-item nav-link" (click)="logout()">Logout</button>
+    </div>
+</nav>
+
+
+<div class="app-container" [ngClass]="{ 'bg-light': user }">
+    <alert></alert>
+    <router-outlet></router-outlet>
+</div>
+
